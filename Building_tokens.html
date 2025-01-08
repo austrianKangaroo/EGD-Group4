@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Grid - Full Page</title>
+    <style>
+        /* General page setup for A4 printing */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+
+        /* Grid container for full-page layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            grid-auto-rows: 50px;
+            gap: 5px; /* Adjust the space between tokens */
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Token style */
+        .token {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <!-- Example tokens -->
+        <div class="token">Solar Panel</div>
+        <div class="token">Solar Panel</div>
+        <div class="token">Solar Panel</div>
+        <div class="token">Solar Panel</div>
+        <div class="token">Solar Panel</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Nuclear reactor</div>
+        <div class="token">Mine</div>
+        <div class="token">Mine</div>
+        <div class="token">Mine</div>
+        <div class="token">Mine</div>
+        <div class="token">Mine</div>
+        <div class="token">Mine</div>
+        <div class="token">Mine</div>
+        <div class="token">Coal Mine</div>
+        <div class="token">Coal Mine</div>
+        <div class="token">Coal Mine</div>
+        <div class="token">Coal Mine</div>
+        <div class="token">Coal Mine</div>
+        <div class="token">Farm</div>
+        <div class="token">Farm</div>
+        <div class="token">Farm</div>
+        <div class="token">Farm</div>
+        <div class="token">Farm</div>
+        <div class="token">Farm</div>
+    </div>
+</body>
+</html>
