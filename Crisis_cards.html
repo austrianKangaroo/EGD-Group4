@@ -3,290 +3,1171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crisis City</title>
+    <title>Printable Crisis Cards</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: white;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            display: grid;
+            grid-template-columns: repeat(3, 68mm);
+            grid-template-rows: repeat(2, 120mm);
+            gap: 1mm;
+            padding: 1mm;
+            box-sizing: border-box;
+            page-break-after: always;
         }
         .card {
-            width: 300px;
-            height: 450px;
+            width: 100%;
+            height: 100%;
             border: 2px solid red;
-            border-radius: 15px;
-            background: #ffffff;
-            margin: 20px auto;
+            border-radius: 10px;
+            background: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
+            padding: 5px;
+            box-sizing: border-box;
         }
         .card-title {
-            font-size: 24px;
+            font-size: 14px;
             font-weight: bold;
             color: red;
             text-align: center;
-            margin-bottom: 10px;
-        }
-        .card-image {
-            width: 100%;
-            height: 150px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-size: 14px;
-            color: #777;
+            margin-bottom: 5px;
         }
         .card-content {
-            text-align: center;
-            font-size: 16px;
-            line-height: 1.5;
+            text-align: left; 
+            font-size: 12px;
+            line-height: 1.4;
             color: #333;
         }
         .card-footer {
-            font-size: 14px;
+            font-size: 10px;
             color: #555;
             text-align: center;
             border-top: 1px solid #e0e0e0;
-            padding-top: 10px;
-            margin-top: 10px;
+            padding-top: 5px;
+            margin-top: 5px;
         }
         .resource-icons {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin: 10px 0;
+            gap: 3px;
+            margin: 5px 0;
         }
         .icon {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background-color: #4CAF50;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 10px;
         }
         .negative-icon {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background-color: #ff0000;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 10px;
+        }
+
+        /* Force printing of background colors */
+        @media print {
+            .icon {
+                -webkit-print-color-adjust: exact; /* For Chrome/Safari */
+                print-color-adjust: exact; /* For modern browsers */
+            }
+            .negative-icon {
+                -webkit-print-color-adjust: exact; /* For Chrome/Safari */
+                print-color-adjust: exact; /* For modern browsers */
+            }
         }
     </style>
 </head>
 <body>
-    <!--//Card-Type: Event Cards-->
-    <div class="card">
-        <div class="card-title">Crisis: Deforestation</div>
-        
-        <div class="card-content">
-            <p><strong>Impact:</strong> +3 Pollution, -1 Community Support</p>
-            <div class="resource-icons">
-                <div class="icon">P</div>
-                <div class="icon">P</div>
-                <div class="icon">P</div>
-                <div class="negative-icon">C</div>
+    <!--//Card-Type: Crisis Cards-->
+    <div class="page">
+        <!--//Card-Type: Event Cards-->
+        <div class="card">
+            <div class="card-title">Crisis: Deforestation</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +3 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
             </div>
-            <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support</p>
-            <div class="resource-icons">
-                <div class="negative-icon">E</div>
-                <div class="negative-icon">E</div>
-                <div class="negative-icon">E</div>
-                <div class="negative-icon">C</div>
-                <div class="negative-icon">C</div>
-            </div>
-            <p><strong>Fun Fact:</strong> Forests absorb 2.6 billion metric tons of CO₂ annually, making them vital carbon sinks.</p>
+            <div class="card-footer">Crisis City - Crisis Card</div>
         </div>
-        <div class="card-footer">Crisis City - Crisis Card</div>
+        <div class="card">
+            <div class="card-title">Crisis: Tsunami</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +2 Pollution, -2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 4 Energy, 2 Community Support, 2 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Hurricane</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">w</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Community Support, 4 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">4*B</div>
+
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Wildfire</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +4 Pollution, -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">4*P</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Tornado</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +1 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 2 Energy,  1 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+                
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Landslide</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +3 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy,  2 Building Materials, 1 Commuity Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+                
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        
+    </div>
+    <div class="page">
+        <div class="card">
+            <div class="card-title">Crisis: Invasive Species</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 4 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Heatwave</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Oil Spill</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +3 pollution, -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support, 2 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Dam Failure</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +1 pollution, -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support, 2 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Overfishing</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 2 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Overfishing</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 2 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="card">
+            <div class="card-title">Crisis: Nuclear Reactor Leak</div>
+            <div class="card-content">
+                <p><strong>Only if at least 1 player has Nuclear Reactor</strong></p>
+                <p><strong>Impact:</strong> +2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Industrial Waste dump</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Soil Degradation</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +1 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 3 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Freshwater shortage</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>-2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 2 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Pipeline Leak</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Bridge Collapse</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="card">
+            <div class="card-title">Crisis: Water Contamination</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution, -2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 1 Building Material, 2 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Cyber Attack</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>No effect</p>
+                <div class="resource-icons">
+                </div>
+                <p><strong>Solution Requirements:</strong> 4 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Shipping delays</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>No effect</p>
+                <div class="resource-icons">
+                </div>
+                <p><strong>Solution Requirements:</strong>4 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Illigal Shipping</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+1 Pollution, -2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong>4 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Dangerous Train Derailment</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong>1 energy, 1 Building Material, 1 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">E</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Warehouse Explosion</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong>2 energy, 2 Building Material, 1 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+
+
+    </div>
+    <div class="page">
+        <!--//Card-Type: Event Cards-->
+        <div class="card">
+            <div class="card-title">Crisis: Deforestation</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +3 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Tsunami</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +2 Pollution, -2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 4 Energy, 2 Community Support, 2 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Hurricane</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">w</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Community Support, 4 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">4*B</div>
+
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Wildfire</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +4 Pollution, -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">4*P</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Tornado</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +1 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 2 Energy,  1 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+                
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Landslide</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +3 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy,  2 Building Materials, 1 Commuity Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+                
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        
+    </div>
+    <div class="page">
+        <div class="card">
+            <div class="card-title">Crisis: Invasive Species</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 4 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Heatwave</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Oil Spill</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +3 pollution, -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support, 2 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Dam Failure</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +1 pollution, -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 2 Community Support, 2 Building Materials</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Overfishing</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 2 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Overfishing</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> -3 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 2 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="card">
+            <div class="card-title">Crisis: Nuclear Reactor Leak</div>
+            <div class="card-content">
+                <p><strong>Only if at least 1 player has Nuclear Reactor</strong></p>
+                <p><strong>Impact:</strong> +2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Industrial Waste dump</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 3 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Soil Degradation</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong> +1 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 3 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Freshwater shortage</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>-2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 2 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Pipeline Leak</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Bridge Collapse</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 1 Building Material</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="card">
+            <div class="card-title">Crisis: Water Contamination</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution, -2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong> 1 Energy, 1 Building Material, 2 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Cyber Attack</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>No effect</p>
+                <div class="resource-icons">
+                </div>
+                <p><strong>Solution Requirements:</strong> 4 Energy, 3 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*E</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Shipping delays</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>No effect</p>
+                <div class="resource-icons">
+                </div>
+                <p><strong>Solution Requirements:</strong>4 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Illigal Shipping</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+1 Pollution, -2 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong>4 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">4*C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Dangerous Train Derailment</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution, -1 Wildlife</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                    <div class="negative-icon">W</div>
+
+                </div>
+                <p><strong>Solution Requirements:</strong>1 energy, 1 Building Material, 1 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">C</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">E</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Crisis: Warehouse Explosion</div>
+            
+            <div class="card-content">
+                <p><strong>Impact:</strong>+2 Pollution</p>
+                <div class="resource-icons">
+                    <div class="icon">P</div>
+                    <div class="icon">P</div>
+                </div>
+                <p><strong>Solution Requirements:</strong>2 energy, 2 Building Material, 1 Community Support</p>
+                <div class="resource-icons">
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">E</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">B</div>
+                    <div class="negative-icon">C</div>
+                    <div class="icon">Cr</div>
+                </div>
+            </div>
+            <div class="card-footer">Crisis City - Crisis Card</div>
+        </div>
+
+
     </div>
 
-    <div class="card">
-        <div class="card-title">Action: Solar Panel Initiative</div>
-        
-        <div class="card-content">
-            <p><strong>Effect:</strong> Requires 3 Energy, reduces Pollution by 1</p>
-            <div class="resource-icons">
-                <div class="icon">E</div>
-                <div class="icon">E</div>
-                <div class="icon">E</div>
-            </div>
-            <p><strong>Fun Fact:</strong> Solar panels can reduce a household's carbon footprint by up to 80%.</p>
-        </div>
-        <div class="card-footer">Crisis City - Action Card</div>
-    </div>
-    <div class="card">
-        <div class="card-title">Event: Economic Boom</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A surge in economic growth has boosted local industry. Businesses are thriving, creating jobs and opportunities for all.</p>
-            <p><strong>Effect:</strong> Each player gains +2 Building Materials. Players with High Pollution gain only +1 Wealth.</p>
-            <div class="resource-icons">
-                <div class="icon">B</div>
-                <div class="icon">B</div>
-            </div>
-        </strong> If Polution is over X only gain  +1 Building Material.</p>
-        <div class="resource-icons">
-            <div class="icon">B</div>
-        </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Severe Drought</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A prolonged drought has hit the region, reducing crop yields and causing water shortages.</p>
-            <p><strong>Effect:</strong> All players lose -2 Community Support. </p>
-            <div class="resource-icons">
-                <div class="negative-icon">C</div>
-                <div class="negative-icon">C</div>
-            </div>
-        <p> If Wildlife is over X only loose -1 Community Support.</p>
-        <div class="resource-icons">
-            <div class="negative-icon">C</div>
-        </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Technological Breakthrough</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> An innovative technology has been developed, making energy production more efficient.</p>
-            <p><strong>Effect:</strong> All players increase Energy output by +1 for 3 turns. </p>
-            <div class="resource-icons">
-                <div class="icon">E</div>
-            </div>
-        <p> Player has a Solar or Nuclear Power Stations gain an additional +1 Energy per Turn.</p>
-        <div class="resource-icons">
-            <div class="icon">E</div>
-            <div class="icon">E</div>
-        </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Local Festival</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A community festival has lifted spirits and strengthened bonds among citizens.</p>
-            <p><strong>Effect:</strong> Each player gains +1 Community Support. </p>
-            <div class="resource-icons">
-                <div class="icon">C</div>
-            </div>
-        <p> Players with Recreation Centers gain an additional +1 Community Support.</p>
-        <div class="resource-icons">
-            <div class="icon">C</div>
-            <div class="icon">C</div>
-
-        </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Environmentalist Movement</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A powerful environmental movement is pushing for greener cities.</p>
-            <p><strong>Effect:</strong> All players can pay 1 Building Material and 1 Community Support to reduce the global Pollution by 2 points.</p>
-            <div class="resource-icons">
-                <div class="negative-icon">C</div>
-                <div class="negative-icon">B</div>
-                <div class="negative-icon">P</div>
-                <div class="negative-icon">P</div>
-            </div>
-        <p> Wildlife Reserves reduce an additional point for free.</p>
-        <div class="resource-icons">
-            <div class="negative-icon">P</div>
-        </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Energy Crisis</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> An energy shortage has hit the region, causing intermittent blackouts.</p>
-            <p><strong>Effect:</strong> All players lose 2 Energy. </p>
-            <div class="resource-icons">
-                <div class="negative-icon">E</div>
-                <div class="negative-icon">E</div>
-            </div>
-        <p>If a Player owns a Nuclear Power Plant no Energy is lost unaffected.</p>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Resource Boom</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A new deposit of resources has been discovered nearby.</p>
-            <p><strong>Effect:</strong> All players gain +2 Building Resources. </p>
-            <div class="resource-icons">
-                <div class="icon">B</div>
-                <div class="icon">B</div>
-            </div>
-        <p> Players owning a Mine gain an additional Building Resource</p>
-        <div class="resource-icons">
-            <div class="icon">B</div>
-            <div class="icon">B</div>
-            <div class="icon">B</div>
-        </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Wildfire Outbreak</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A wildfire has spread across the region, damaging infrastructure and affecting air quality.</p>
-            <p><strong>Effect:</strong> All players increase Pollution by 2 points and lose 1 Community Support.</p>
-            <div class="resource-icons">
-                <div class="icon">P</div>
-                <div class="icon">P</div>
-                <div class="negative-icon">C</div>
-            </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-title">Event: Clean Air Initiative</div>
-        
-        <div class="card-content">
-            <p><strong>Description:</strong> A global initiative is helping cities reduce air pollution.</p>
-            <p><strong>Effect:</strong> All players reduce Pollution by 1 point for free.</p>
-            <div class="resource-icons">
-                <div class="negative-icon">P</div>
-            </div>
-            <p>Solar Power Stations reduce an additional 1 point.</p>
-            <div class="resource-icons">
-                <div class="negative-icon">P</div>
-                <div class="negative-icon">P</div>
-            </div>
-        </div>
-        <div class="card-footer">Crisis City - Event Card</div>
-    </div>
     
 </body>
 </html>
