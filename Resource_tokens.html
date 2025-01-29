@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Grid - Full Page</title>
+    <style>
+        /* General page setup for A4 printing */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            height: 100vh;
+        }
+
+        /* Grid container */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-auto-rows: 100px;
+            gap: 5px;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Token base style */
+        .token {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Backgrounds for different types of tokens */
+        .energy { background-image: url('images/Energy.png'); }
+        .building { background-image: url('images/Building_material.png'); }
+        .community { background-image: url('images/Community_support.png'); }
+        .crisis { background-image: url('images/Crisis.png'); }
+
+    </style>
+</head>
+<body>
+    <div class="grid" id="tokenGrid">
+        <!-- Tokens will be added here dynamically -->
+    </div>
+
+    <script>
+        const grid = document.getElementById("tokenGrid");
+
+        // Sample data for tokens
+        const tokenTypes = ["energy", "building", "community", "crisis"];
+        const tokenLabels = {
+            energy: "",
+            building: "",
+            community: "",
+            crisis: ""
+        };
+
+        // Function to generate tokens
+        function createTokens(count) {
+            for (let i = 0; i < count; i++) {
+                let type = tokenTypes[i % tokenTypes.length]; // Rotate through types
+                let token = document.createElement("div");
+                token.classList.add("token", type);
+                token.textContent = tokenLabels[type];
+                grid.appendChild(token);
+            }
+        }
+
+        createTokens(300); // Adjust number of tokens as needed
+    </script>
+</body>
+</html>
